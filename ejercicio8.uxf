@@ -1,0 +1,37 @@
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><element><id>UMLClass</id><coordinates><x>71</x><y>252</y><w>189</w><h>54</h></coordinates><panel_attributes>Empresa
+--
++mostrarSalarios(): void;
++empleadoConMasClientes(): void;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>287</x><y>252</y><w>189</w><h>126</h></coordinates><panel_attributes>/Empleado/
+--
+-dni: int;
+-nombre: String;
+-apellido: String;
+-anioDeIngreso: int;
+--
+/+calcularSalario(): double;/
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>152</x><y>297</y><w>153</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
+m1=0..n
+-empleados</panel_attributes><additional_attributes>150;50;10;50;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>71</x><y>414</y><w>189</w><h>171</h></coordinates><panel_attributes>EmpleadoComision
+--
+-clientesCaptados: int;
+-montoACobrar: double;
+--
++calcularSalario(): double;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>512</x><y>414</y><w>189</w><h>171</h></coordinates><panel_attributes>EmpleadoSalarioFijo
+--
+-sueldoBasico: int;
+-porcentajeAdicional: int;
+--
++calcularSalario(): double;</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>251</x><y>369</y><w>108</w><h>144</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>100;10;100;140;10;140</additional_attributes></element><element><id>Relation</id><coordinates><x>413</x><y>369</y><w>117</w><h>144</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;140;110;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>512</x><y>99</y><w>513</w><h>189</h></coordinates><panel_attributes>halign=left
+8) Cierta empresa requiere una aplicación informática para administrar los datos de su personal,
+del cual se conoce: número de DNI, nombre, apellido y año de ingreso. Existen dos categorías de
+personal: el personal con salario fijo y el personal a comisión.
+▪ Los empleados a comisión tienen un salario mínimo de $20.000 (para todos igual), un número
+de clientes captados y un monto a cobrar por cada cliente captado. El salario se obtiene
+multiplicando los clientes captados por el monto por cliente. Si el salario obtenido por los
+clientes captados no llega a cubrir el salario mínimo, cobrará el salario mínimo.
+▪ Los empleados con salario fijo tienen un sueldo básico y un porcentaje adicional en función
+del número de años que llevan la empresa:
+o Menos de 2 años: sueldo básico.
+o De 2 a 5 años: 5% más.
+o De 6 a 10 años: 10% más.
+o Más de 10 años: 15% más</panel_attributes><additional_attributes></additional_attributes></element></diagram>
