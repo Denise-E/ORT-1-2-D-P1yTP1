@@ -1,0 +1,74 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>495</x><y>40</y><w>260</w><h>70</h></coordinates><panel_attributes>Empresa
+--
++cabinasConEfectivo(): void;
++promedioDemora(): double;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>875</x><y>70</y><w>210</w><h>120</h></coordinates><panel_attributes>EstacionPeaje
+--
+-id: int;
+-descripcion: String;
+--
++dameHoraActual(): int;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>515</x><y>270</y><w>280</w><h>190</h></coordinates><panel_attributes>Cabina
+-
+-id: int;
+__-HORARIO_MIN_MANIANA : int = 6 ;__
+__-HORARIO_MIN_TARDE : int =  17;__
+__-HORARIO_MAX_MANIANA : int = 10;__
+__-HORARIO_MAX_TARDE : int = 20;__
+__-INCREMENTO_HORA_PICO: int = 0.08;__
+--
++cobrar(Vehiculo): double;
+-calcularTarifa(Vehiculo): double;
+-calcularDescuento(): double;
+-horaPico(): boolean;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>635</x><y>100</y><w>260</w><h>70</h></coordinates><panel_attributes>lt=&lt;-
+m1=0..n
+-estaciones</panel_attributes><additional_attributes>240;40;10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>635</x><y>180</y><w>360</w><h>110</h></coordinates><panel_attributes>lt=&lt;-
+m1=0..n
+-cabinas</panel_attributes><additional_attributes>10;90;10;50;340;50;340;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>545</x><y>530</y><w>210</w><h>80</h></coordinates><panel_attributes>/MedioDePago/
+--
+--
+/+calcularDescuento()/</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>635</x><y>450</y><w>110</w><h>100</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+-medioDePago</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>85</x><y>650</y><w>160</w><h>100</h></coordinates><panel_attributes>PASE
+--
+-dto1: int = 0.15;
+-dto2: int = 0.12;
+-diasDemora = 5;
+--
++calcularDescuento()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>845</x><y>550</y><w>210</w><h>60</h></coordinates><panel_attributes>Efectivo
+--
+-dto: double= 0;
+--
++calcularDescuento()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>185</x><y>590</y><w>100</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>80;10;10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>745</x><y>570</y><w>120</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>185</x><y>510</y><w>100</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>80;50;10;50;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>875</x><y>320</y><w>130</w><h>70</h></coordinates><panel_attributes>/Vehiculo/
+--
+-patente: String;
+--
+/+devolverTarifa(): double;/</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>785</x><y>350</y><w>110</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>90;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>265</x><y>540</y><w>210</w><h>80</h></coordinates><panel_attributes>/Tarjeta/
+--
+-diasDemora: int;
+--
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>465</x><y>570</y><w>100</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>80;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>125</x><y>450</y><w>130</w><h>70</h></coordinates><panel_attributes>SUBE
+--
+-Dto: double= 0.1;
+--
++calcularDescuento()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1075</x><y>250</y><w>140</w><h>60</h></coordinates><panel_attributes>Auto
+--
+-tarifa: int;
+--
++devolverTarifa(): int;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1075</x><y>320</y><w>140</w><h>60</h></coordinates><panel_attributes>Moto
+--
+-tarifa: int;
+--
++devolverTarifa(): int;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1075</x><y>400</y><w>140</w><h>60</h></coordinates><panel_attributes>Camion
+--
+-tarifa: int;
+--
++devolverTarifa(): int;</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>995</x><y>340</y><w>100</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>975</x><y>380</y><w>120</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50;100;50</additional_attributes></element><element><id>Relation</id><coordinates><x>975</x><y>270</y><w>120</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;50;10;10;100;10</additional_attributes></element></diagram>
