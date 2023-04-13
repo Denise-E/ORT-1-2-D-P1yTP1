@@ -88,7 +88,9 @@ Retorna el porcentaje de personas que quedaron afuera sobre el total (para todos
 		int acum = 0;
 		
 		for (Persona p : this.personas) {
-			acum += p.esPriorizable() ?  1 : 0;
+			if(!(p instanceof PersonaConObraSocial) || p.esPriorizable() == 1) {
+				acum++;
+			}
 		}
 		
 		return acum;
@@ -98,6 +100,13 @@ Retorna el porcentaje de personas que quedaron afuera sobre el total (para todos
 	public void agregarPersona(Persona p) {
 		this.personas.add(p);
 		
+	}
+
+
+	@Override
+	public String toString() {
+		return "Dia [MAX_CUPOS=" + MAX_CUPOS + ", cuposDados=" + cuposDados + ", fecha=" + fecha + ", habil=" + habil
+				+ ", personas=" + personas + "]";
 	}
 	
 	

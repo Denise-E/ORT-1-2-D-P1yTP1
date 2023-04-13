@@ -1,5 +1,5 @@
 package TP3_Ej12;
 
 public interface Priorizable {
-	public abstract boolean esPriorizable();
+	public abstract int esPriorizable();
 }

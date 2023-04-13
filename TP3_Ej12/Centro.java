@@ -36,6 +36,7 @@ Retorna el porcentaje de personas que quedaron afuera sobre el total (para todos
 		for (Dia d : this.dias) {
 			int cantPrioritarios = d.calcularCantPrioritarios();
 			
+			
 			if(cantPrioritarios > max) {
 				max = cantPrioritarios;
 				diaMax = d;
@@ -43,5 +44,9 @@ Retorna el porcentaje de personas que quedaron afuera sobre el total (para todos
 		}
 		
 		System.out.println("El dia con mas prioritarios es el: " + diaMax);
+	}
+
+	public void agregarDia(Dia d) {
+		this.dias.add(d);
 	}
 }

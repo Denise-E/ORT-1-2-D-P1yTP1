@@ -17,19 +17,26 @@ public class Persona implements Priorizable, Notificable{
 	
 	@Override
 	public void mostrarMensaje(String m) {
-		// TODO Auto-generated method stub
-		
+		System.out.println(m);
 	}
+	
 	@Override
-	public boolean esPriorizable() {
+	public int esPriorizable() {
 		/*
 		 * debe devolver un valor entero 1 indicando si tiene prioridad o 2 si no tiene. Una
 persona tendrá prioridad (devolverá 1) si cumple con alguna de las siguientes reglas:
-o No tiene obra social.
+o No tiene obra social. // VALIDADO EN esPriorizable DE LA CLASE DIA
 o Su edad es mayor o igual a 60
 o Tuvo contacto estrecho.
 		 */
-		return false;
+		int prioridad = 2;
+		final int EDAD_MIN = 60;
+		
+		if(this.edad >= EDAD_MIN || this.motivo == MotivoTest.CONTACTO_ESTRECHO) {
+			prioridad = 1;
+		}
+		
+		return prioridad;
 	}
 	
 	private void setDni(String dni) {
