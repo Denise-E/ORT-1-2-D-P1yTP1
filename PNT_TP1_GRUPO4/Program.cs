@@ -171,7 +171,16 @@ namespace TP1_GRUPO4
 
 
             Console.WriteLine("Ingrese su edad: ");
-            asistente.edad = short.Parse(Console.ReadLine());
+
+            short edad_verificada;
+            bool edad_checked = short.TryParse(Console.ReadLine(), out edad_verificada);
+
+            if (!edad_checked)
+            {
+                asistente.edad = 0;
+            }else{
+                asistente.edad = edad_verificada;
+            }
 
 
             Console.WriteLine("Ingrese su turno: ");
