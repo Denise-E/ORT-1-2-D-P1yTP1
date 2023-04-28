@@ -28,9 +28,17 @@ namespace TP1_GRUPO4
             Console.WriteLine("8 - Eliminar Asistentes de una edad especifica");
             Console.Write("Ingrese una de las opciones: ");
 
-            short sel = Convert.ToInt16(Console.ReadLine());
+            short sel_verificado;
+            bool sel_checked = short.TryParse(Console.ReadLine(), out sel_verificado);
 
-            switch (sel)
+            while (!sel_checked)
+            {
+                Console.WriteLine("Ingrese una opcion valida: ");
+                sel_checked = short.TryParse(Console.ReadLine(), out sel_verificado);
+            }
+
+            
+            switch (sel_verificado)
             {
                 case 1:
                     {
@@ -82,13 +90,21 @@ namespace TP1_GRUPO4
             Console.WriteLine("Borrar Asistentes con edad especificada");
 
             Console.WriteLine("Ingrese la edad necesitada: ");
-            short edad = short.Parse(Console.ReadLine());
+            short edad_verificada;
+            bool edad_checked = short.TryParse(Console.ReadLine(), out edad_verificada);
 
-            int eliminados = actividad.EliminarAsistentesDeEdadEspecifica(edad);
+            while (!edad_checked)
+            {
+                Console.WriteLine("Ingrese una edad valida: ");
+                edad_checked = short.TryParse(Console.ReadLine(), out edad_verificada);
+            }
+                    
+
+            int eliminados = actividad.EliminarAsistentesDeEdadEspecifica(edad_verificada);
 
             if (eliminados > 0)
             {
-                Console.WriteLine(eliminados + " Asistente eliminado");
+                Console.WriteLine(eliminados + " Asistente/s eliminado");
             }
             else
             {
@@ -130,7 +146,7 @@ namespace TP1_GRUPO4
             while (!edad_checked)
             {
                 Console.WriteLine("Ingrese una edad valida: ");
-                id_checked = short.TryParse(Console.ReadLine(), out edad_verificada);
+                edad_checked = short.TryParse(Console.ReadLine(), out edad_verificada);
             }
             asistente.edad = edad_verificada;
 
@@ -163,7 +179,17 @@ namespace TP1_GRUPO4
             Console.WriteLine("Actualizar Asistente");
             Asistente asistente = new Asistente();
             Console.WriteLine("Ingrese su id: ");
-            asistente.id = int.Parse(Console.ReadLine());
+
+            int id_verificado;
+            bool id_checked = Int32.TryParse(Console.ReadLine(), out id_verificado);
+
+            while (!id_checked)
+            {
+                Console.WriteLine("Ingrese un id valido: ");
+                id_checked = Int32.TryParse(Console.ReadLine(), out id_verificado);
+            }
+            asistente.id = id_verificado;
+
             Console.WriteLine("Ingrese su nombre: ");
             asistente.nombre = Console.ReadLine();
             Console.WriteLine("Ingrese su apellido: ");
@@ -188,8 +214,6 @@ namespace TP1_GRUPO4
             Console.WriteLine("Ingrese su descripcion: ");
             asistente.descripcion = Console.ReadLine();
 
-            //Console.WriteLine("Asistencia NOMBRE UPDATE: " + asistente.nombre);
-
             bool actualizado = actividad.Update(asistente);
 
             if (actualizado)
@@ -211,9 +235,18 @@ namespace TP1_GRUPO4
             Console.Clear();
             Console.WriteLine("Leer Asistente");
             Console.WriteLine("Ingrese su id: ");
-            int id = Convert.ToInt16(Console.ReadLine());
 
-            Asistente a = actividad.Read(id);
+            int id_verificado;
+            bool id_checked = Int32.TryParse(Console.ReadLine(), out id_verificado);
+
+            while (!id_checked)
+            {
+                Console.WriteLine("Ingrese un id valido: ");
+                id_checked = Int32.TryParse(Console.ReadLine(), out id_verificado);
+            }
+            
+                       
+            Asistente a = actividad.Read(id_verificado);
 
             Console.WriteLine("Detalles del asistente: "); 
 
@@ -229,7 +262,7 @@ namespace TP1_GRUPO4
             else
             {
 
-                Console.WriteLine("No se encontro el Asistente con id " + $"{id}");
+                Console.WriteLine("No se encontro el Asistente con id " + $"{id_verificado}");
 
             }
 
@@ -275,9 +308,16 @@ namespace TP1_GRUPO4
             Console.WriteLine("Borrar Asistente");
 
             Console.WriteLine("Ingrese su id: ");
-            int id = int.Parse(Console.ReadLine());
+            int id_verificado;
+            bool id_checked = Int32.TryParse(Console.ReadLine(), out id_verificado);
 
-            bool eliminado = actividad.Delete(id);
+            while (!id_checked)
+            {
+                Console.WriteLine("Ingrese un id valido: ");
+                id_checked = Int32.TryParse(Console.ReadLine(), out id_verificado);
+            }
+                    
+            bool eliminado = actividad.Delete(id_verificado);
 
             if (eliminado)
             {
@@ -299,9 +339,16 @@ namespace TP1_GRUPO4
             Console.WriteLine("Buscando Asistentes por Edad");
 
             Console.WriteLine("Ingrese la edad buscada: ");
-            short edad = short.Parse(Console.ReadLine());
+            short edad_verificado;
+            bool edad_checked = short.TryParse(Console.ReadLine(), out edad_verificado);
 
-            List<Asistente> buscados = actividad.BuscarAsistentePorEdad(edad);
+            while (!edad_checked)
+            {
+                Console.WriteLine("Ingrese una edad valida: ");
+                edad_checked = short.TryParse(Console.ReadLine(), out edad_verificado);
+            }
+            
+            List<Asistente> buscados = actividad.BuscarAsistentePorEdad(edad_verificado);
 
             if (buscados.Count() > 0)
             {

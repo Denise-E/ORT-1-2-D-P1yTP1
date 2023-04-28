@@ -57,8 +57,7 @@ namespace TP1_GRUPO4.Persistencia
             bool actualizado = false;
             Asistente asistente = Read(a.id);
 
-            //Console.WriteLine("ASISTENTE sin MODIFICADar " +  asistente.ToString());
-
+           
             if (asistente != null)
             {
                 actualizado = true;
