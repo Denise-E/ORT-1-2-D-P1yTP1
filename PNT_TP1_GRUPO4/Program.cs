@@ -106,13 +106,35 @@ namespace TP1_GRUPO4
 
             Asistente asistente = new Asistente();
             Console.WriteLine("Ingrese su id: ");
-            asistente.id = int.Parse(Console.ReadLine());
+     
+           int id_verificado;
+           bool id_checked = Int32.TryParse(Console.ReadLine(), out id_verificado);
+
+            while (!id_checked)
+            {
+                Console.WriteLine("Ingrese un id valido: ");
+                id_checked = Int32.TryParse(Console.ReadLine(), out id_verificado);
+            }
+            asistente.id = id_verificado;
+
+
             Console.WriteLine("Ingrese su nombre: ");
             asistente.nombre = Console.ReadLine();
             Console.WriteLine("Ingrese su apellido: ");
             asistente.apellido = Console.ReadLine();
+
             Console.WriteLine("Ingrese su edad: ");
-            asistente.edad = short.Parse(Console.ReadLine());
+            short edad_verificada;
+            bool edad_checked = short.TryParse(Console.ReadLine(), out edad_verificada);
+
+            while (!edad_checked)
+            {
+                Console.WriteLine("Ingrese una edad valida: ");
+                id_checked = short.TryParse(Console.ReadLine(), out edad_verificada);
+            }
+            asistente.edad = edad_verificada;
+
+
             Console.WriteLine("Ingrese su turno: ");
             asistente.turno = Console.ReadLine();
             Console.WriteLine("Ingrese su descripcion: ");
@@ -146,8 +168,12 @@ namespace TP1_GRUPO4
             asistente.nombre = Console.ReadLine();
             Console.WriteLine("Ingrese su apellido: ");
             asistente.apellido = Console.ReadLine();
+
+
             Console.WriteLine("Ingrese su edad: ");
             asistente.edad = short.Parse(Console.ReadLine());
+
+
             Console.WriteLine("Ingrese su turno: ");
             asistente.turno = Console.ReadLine();
             Console.WriteLine("Ingrese su descripcion: ");
