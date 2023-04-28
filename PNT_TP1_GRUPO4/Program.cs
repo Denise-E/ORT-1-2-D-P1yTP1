@@ -15,16 +15,16 @@ namespace TP1_GRUPO4
         static Actividad_asistente actividad = new Actividad_asistente();
         static void Main()
         {
-            Console.Clear();//AGREGADO
+            Console.Clear();
             Console.WriteLine("MANEJO DE ASISTENTES");
             Console.WriteLine("-------");
             Console.WriteLine("1 - Alta Asistente");
-            Console.WriteLine("2 - Modificar Asistente");//ARREGLAR UPDATE... ERROR SI PONES UN ID QUE NO EXISTE
+            Console.WriteLine("2 - Modificar Asistente");
             Console.WriteLine("3 - Buscar Asistente por ID");
             Console.WriteLine("4 - Listar a todos los Asistentes");
             Console.WriteLine("5 - Borrar Asistente");
-            Console.WriteLine("6 - Buscar Asistente por edad"); // Funciona
-            Console.WriteLine("7 - Buscar Asistente por turno"); // Funciona
+            Console.WriteLine("6 - Buscar Asistente por edad"); 
+            Console.WriteLine("7 - Buscar Asistente por turno"); 
             Console.WriteLine("8 - Eliminar Asistentes de una edad especifica");
             Console.Write("Ingrese una de las opciones: ");
 
@@ -135,7 +135,7 @@ namespace TP1_GRUPO4
 
         }
 
-       static void Update() // <-------- TIRA ERROR AL MODIFICAR UN ASISTENTE "INEXISTENTE"
+       static void Update() 
         {
             Console.Clear();
             Console.WriteLine("Actualizar Asistente");
