@@ -19,7 +19,7 @@ namespace TP1_GRUPO4.Negocios.Entidades
         override
         public string ToString()
         {
-            return "Nombre " + nombre + " Apellido " + apellido;
+            return "Nombre " + nombre + " Apellido " + apellido + " Edad " + edad + " Turno " + turno + " Descripcion " + descripcion;
         }
     }
 }

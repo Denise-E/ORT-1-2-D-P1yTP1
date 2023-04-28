@@ -63,11 +63,11 @@ namespace TP1_GRUPO4.Persistencia
             {
                 actualizado = true;
 
-                string n = a.nombre != "" ? (asistente.nombre = a.nombre) : asistente.nombre;
-                string apell = a.apellido != "" ? (asistente.apellido = a.apellido) : asistente.apellido;
-                short ed = a.edad != null ? (asistente.edad = a.edad) : asistente.edad; // OJO QUE NO SE RECIBIRIA COMO NULL SI NO ME PASAN NINGUN VALOR
-                string turn = a.turno != "" ? (asistente.turno = a.turno) : asistente.turno;
-                string desc = a.descripcion != "" ? (asistente.descripcion = a.descripcion) : asistente.descripcion;
+                string n = !string.IsNullOrEmpty(a.nombre) ? (asistente.nombre = a.nombre) : asistente.nombre;
+                string apell = !string.IsNullOrEmpty(a.apellido) ? (asistente.apellido = a.apellido) : asistente.apellido;
+                short ed = a.edad > 0 ? (asistente.edad = a.edad) : asistente.edad; 
+                string turn = !string.IsNullOrEmpty(a.turno) ? (asistente.turno = a.turno) : asistente.turno;
+                string desc = !string.IsNullOrEmpty(a.descripcion) ? (asistente.descripcion = a.descripcion) : asistente.descripcion;
 
                 Console.WriteLine("ASISTENTE MODIFICADO " + asistente.ToString());
             }
